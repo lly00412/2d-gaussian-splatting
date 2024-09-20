@@ -71,3 +71,4 @@ class MiniCam:
         view_inv = torch.inverse(self.world_view_transform)
         self.camera_center = view_inv[3][:3]
 
+# TODO: need to modify the virtual camera here, change R and T
