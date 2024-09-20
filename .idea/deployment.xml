@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="viper (15)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/lchen39/projects/liyan/2d-gaussian-splatting" local="$PROJECT_DIR$" />
+            <mapping deploy="/home/lchen39/projects/liyan/2D-GS-Viser-Viewer" local="$PROJECT_DIR$/../2D-GS-Viser-Viewer" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
