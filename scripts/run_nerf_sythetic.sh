@@ -3,7 +3,7 @@
 CUDA_VISIBLE_DEVICES=0
 DATA_DIR=/mnt/Data2/nerf_datasets/nerf_synthetic/
 
-python train.py -s $DATA_DIR/ship -m output/nerf_synthetic/ship
+python train.py -s $DATA_DIR/drums -m output/nerf_synthetic/drums-debug
 # To view the results：
 # 2D-GS-Viser-Viewer
 # forward the output to a target port and do ssh mapping

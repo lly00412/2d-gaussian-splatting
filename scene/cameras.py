@@ -58,6 +58,26 @@ class Camera(nn.Module):
         self.full_proj_transform = (self.world_view_transform.unsqueeze(0).bmm(self.projection_matrix.unsqueeze(0))).squeeze(0)
         self.camera_center = self.world_view_transform.inverse()[3, :3]
 
+class VirtualCam(Camera):
+    def __init__(self,gt_cam, data_device = "cuda"
+                 ):
+        super(VirtualCam, self).__init__()
+        self.gt_cam = gt_cam
+        self.data_device = self.gt_cam.data_device
+        self.get_camera_direction_and_center()
+    def get_camera_direction_and_center(self):
+        self.camera_center = self.gt_cam.camera_center.clone() # torch.tensor
+        w2c = self.gt_cam.world_view_transform.T
+        c2w = torch.linalg.inv(w2c)
+        self.left = c2w[:3, 0].clone()
+        self.up = c2w[:3, 1].clone()
+        self.forward = c2w[:3, 2].clone()
+
+    # def rot_cam_by_center
+
+
+
+
 class MiniCam:
     def __init__(self, width, height, fovy, fovx, znear, zfar, world_view_transform, full_proj_transform):
         self.image_width = width
